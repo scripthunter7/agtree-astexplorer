@@ -36,7 +36,6 @@ jobs:
 
       # Create a dummy build
       - name: Create dummy build
-        working-directory: ./website
         run: |
           mkdir -p ./out
           echo "Dummy build" > ./out/index.html
