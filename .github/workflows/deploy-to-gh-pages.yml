@@ -4,12 +4,11 @@ env:
   NODE_VERSION: 18
 
 on:
-  workflow_dispatch:
-  # push:
-  #   branches:
-  #     - master
-  #   paths:
-  #     - "website/**"
+  push:
+    branches:
+      - master
+    paths:
+      - "website/**"
 
 jobs:
   build:
@@ -33,12 +32,6 @@ jobs:
       - name: Run build
         working-directory: ./website
         run: yarn build
-
-      # # Create a dummy build
-      # - name: Create dummy build
-      #   run: |
-      #     mkdir -p ./out
-      #     echo "Dummy build" > ./out/index.html
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v3
