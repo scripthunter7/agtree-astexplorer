@@ -2,7 +2,9 @@
 
 Demo is available at https://scripthunter7.github.io/agtree-astexplorer/
 
-To use it, please select `Adblock Filter List` language from the top menu.
+To use it, please select `Adblock Filter List` language from the top menu:
+
+![image](https://github.com/scripthunter7/agtree-astexplorer/assets/57285466/b7c58a62-b4ed-4500-b297-a6cf345abad1)
 
 ## What is this?
 
