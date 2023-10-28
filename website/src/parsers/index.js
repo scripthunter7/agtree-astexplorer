@@ -59,7 +59,7 @@ export const categories =
   });
 
 export function getDefaultCategory() {
-  return categoryByID.javascript;
+  return categoryByID.adblock;
 }
 
 export function getDefaultParser(category = getDefaultCategory()) {
