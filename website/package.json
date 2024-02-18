@@ -43,7 +43,7 @@
     "webpack-cli": "^3.1.0"
   },
   "dependencies": {
-    "@adguard/agtree": "^1.1.2",
+    "@adguard/agtree": "^1.1.7",
     "@angular-eslint/template-parser": "^14.0.2",
     "@angular/compiler": "^13.0.1",
     "@babel/eslint-parser": "~7.13.0",
@@ -82,6 +82,7 @@
     "cherow": "^1.6.8",
     "codemirror": "^5.22.0",
     "codemirror-graphql": "^0.11.6",
+    "codemirror-textmate": "^1.1.0",
     "css": "^2.2.1",
     "css-tree": "^2.0.0",
     "cssom": "^0.4.4",
@@ -118,6 +119,7 @@
     "lucene": "^2.1.1",
     "mathjs": "^10.6.1",
     "meriyah": "^4.2.0",
+    "onigasm": "^2.2.5",
     "parse5": "^6.0.0",
     "parse5-htmlparser2-tree-adapter": "^6.0.0",
     "pbkit": "^0.0.38",

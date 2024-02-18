@@ -161,7 +161,10 @@ module.exports = Object.assign({
       {
         test: /.wasm$/,
         type: "javascript/auto",
-        include: [path.join(__dirname, 'node_modules', '@swc', 'wasm-web')],
+        include: [
+          path.join(__dirname, 'node_modules', '@swc', 'wasm-web'),
+          path.join(__dirname, 'node_modules', 'onigasm', 'lib', 'onigasm'),
+        ],
         loader: "file-loader"
       },
       // This rule is needed to make sure *.mjs files in node_modules are

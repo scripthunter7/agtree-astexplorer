@@ -28,10 +28,18 @@ import parserMiddleware from './store/parserMiddleware';
 import snippetMiddleware from './store/snippetMiddleware.js';
 import transformerMiddleware from './store/transformerMiddleware';
 import cx from './utils/classnames.js';
+import { loadTMLanguage } from './tm/index.js';
 
 function resize() {
   publish('PANEL_RESIZE');
 }
+
+loadTMLanguage().then((result) => {
+  if (result) {
+    console.log('TextMate grammar loaded');
+    publish('TM_LOADED');
+  }
+});
 
 function App({showTransformer, hasError}) {
   return (

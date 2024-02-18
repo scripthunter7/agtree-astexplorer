@@ -150,7 +150,8 @@ example.*#?#canvas#petrolStation[title|=CSStest i]:nth-of-type(1n+3):empty:befor
 #?#.ads:contains(aa'bb"cc)
 
 ! Empty uBO js
-example.net#@#+js()
+! TODO: 'generate' method should be fixed to enable this rule - otherwise it breaks the transformer
+! example.net#@#+js()
 
 ! ABP json-prune
 example.com#$#json-prune 'something'

@@ -93,6 +93,17 @@ export default class Editor extends React.Component {
       },
     );
 
+    this._subscriptions.push(
+      subscribe('TM_LOADED', () => {
+        setTimeout(() => {
+          if (this.codeMirror) {
+            this.codeMirror.setOption('mode', this.props.mode);
+            this.codeMirror.refresh();
+          }
+        }, 1);
+      }),
+    );
+
     this._bindCMHandler('blur', instance => {
       if (!this.props.enableFormatting) return;
 

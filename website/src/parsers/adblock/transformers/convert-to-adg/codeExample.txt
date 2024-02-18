@@ -1,0 +1,14 @@
+/**
+ * Converts a raw filter list with AGTree.
+ * 
+ * @param {string} rawFilterList Raw filter list to be converted.
+ * @param {object} agtreeInstance AGTree instance.
+ * @returns {string} Transformed filter list.
+ */
+export default function(rawFilterList, agtreeInstance) {
+    // The following conversion process is done in 3 steps. It
+    //  1. parses the raw filter list internally to AST;
+    //  2. does the conversion from AST to AST;
+    //  3. serializes the converted AST to a string.
+    return agtreeInstance.RawFilterListConverter.convertToAdg(rawFilterList).result;
+}
