@@ -4,6 +4,7 @@ import cx from '../../utils/classnames.js';
 import {getCategoryByID, categories} from '../../parsers';
 
 const categoryIcon = {
+  adblock: 'adguard_logo',
   'text/x-scala': 'icon-scala',
   css: 'fa-css3',
   graphql: 'icon-GraphQL_Logo',
