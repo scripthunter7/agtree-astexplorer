@@ -9,6 +9,7 @@ on:
       - master
     paths:
       - "website/**"
+      - ".github/workflows/deploy-to-gh-pages.yml"
 
 jobs:
   build:
@@ -36,7 +37,7 @@ jobs:
       - name: Make an artifact named github-pages from build
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./website/out
+          path: ./out
 
   deploy:
     needs: build
