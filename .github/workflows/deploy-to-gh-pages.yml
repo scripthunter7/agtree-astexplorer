@@ -16,10 +16,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out to repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: yarn
@@ -33,30 +33,18 @@ jobs:
         working-directory: ./website
         run: yarn build
 
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
+      - name: Make an artifact named github-pages from build
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: website
-          path: ./out
+          path: ./website/out
 
   deploy:
-    name: Deploy to GitHub Pages
     needs: build
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Check out to repository
-        uses: actions/checkout@v3
-
-      - name: Download build artifacts
-        uses: actions/download-artifact@v3
-        with:
-          name: website
-          path: ./out
-
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out
+        id: deployment
+        uses: actions/deploy-pages@v4

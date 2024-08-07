@@ -1,5 +1,5 @@
 import compileModule from '../../../utils/compileModule';
-import pkg from '@adguard/agtree/package.json';
+import pkg from 'agtree-v2/package.json';
 
 const ID = '@adguard/agtree';
 
@@ -12,7 +12,7 @@ export default {
   defaultParserID: ID,
 
   loadTransformer(callback) {
-    require(['../../../transpilers/babel', '@adguard/agtree'], (transpile, agtree) => {
+    require(['../../../transpilers/babel', 'agtree-v2'], (transpile, agtree) => {
       callback({ transpile: transpile.default, agtree });
     });
   },

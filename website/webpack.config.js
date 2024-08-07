@@ -167,6 +167,33 @@ module.exports = Object.assign({
         ],
         loader: "file-loader"
       },
+      // AGTree v2 uses modern syntax that breaks AST Explorer's build process.
+      {
+        test: /node_modules\/agtree-v2\/dist\/agtree\.umd\.min\.js$/,
+        include: /node_modules/,
+        use: {
+          loader: 'swc-loader',
+          options: {
+            jsc: {
+              parser: {
+                syntax: 'ecmascript',
+                jsx: false,
+              },
+              target: 'es5',
+              loose: false,
+              minify: {
+                compress: false,
+                mangle: false,
+              },
+            },
+            module: {
+              type: 'es6',
+            },
+            minify: true,
+            isModule: true,
+          },
+        },
+      },
       // This rule is needed to make sure *.mjs files in node_modules are
       // interpreted as modules.
       {

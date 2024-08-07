@@ -1,19 +1,18 @@
 import defaultParserInterface from '../utils/defaultParserInterface';
-import pkg from '@adguard/agtree/package.json';
+import pkg from 'agtree-v1/package.json';
 
 const ID = '@adguard/agtree';
 
 export default {
   ...defaultParserInterface,
-
   id: ID,
-  displayName: ID,
+  displayName: ID + ' v1',
   version: pkg.version,
   homepage: pkg.homepage || 'https://github.com/AdguardTeam/tsurlfilter/tree/master/packages/agtree',
   locationProps: new Set(['loc']),
 
   loadParser(callback) {
-    require(['@adguard/agtree'], callback);
+    require(['agtree-v1'], callback);
   },
 
   parse(agtree, code) {
