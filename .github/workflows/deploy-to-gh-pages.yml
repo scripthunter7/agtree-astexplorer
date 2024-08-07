@@ -11,6 +11,11 @@ on:
       - "website/**"
       - ".github/workflows/deploy-to-gh-pages.yml"
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   build:
     name: Build AST Explorer website
